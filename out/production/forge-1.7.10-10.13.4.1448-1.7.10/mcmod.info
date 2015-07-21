@@ -1,0 +1,16 @@
+[
+{
+  "modid": "turrets",
+  "name": "Turret mod for Minecraft",
+  "description": "A customizable modular turret will fend off monster that are threatening your home.",
+  "version": "${1.0}",
+  "mcversion": "${1.7.10}",
+  "url": "",
+  "updateUrl": "",
+  "authorList": ["Nathanael"],
+  "credits": "Made possible with the help from many people.",
+  "logoFile": "",
+  "screenshots": [],
+  "dependencies": []
+}
+]
