@@ -2,8 +2,8 @@ package com.nate.turrets.render;
 
 
 import com.nate.turrets.Reference;
-import com.nate.turrets.models.BasicTurretModel;
-import com.nate.turrets.tileentities.Turret;
+import com.nate.turrets.models.ModelBasicTurret;
+import com.nate.turrets.tileentities.TileEntityTurret;
 import net.minecraft.block.Block;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.OpenGlHelper;
@@ -19,15 +19,15 @@ import org.lwjgl.opengl.GL11;
  * Created by Nathanael on 7/17/2015.
  *
  */
-public class BasicTurretRender extends TileEntitySpecialRenderer{
+public class RenderBasicTurret extends TileEntitySpecialRenderer{
 
 
-    private final BasicTurretModel model ;
+    private final ModelBasicTurret model ;
 
     private String resourceLoctation;
 
-    public BasicTurretRender(String url) {
-        model = new BasicTurretModel();
+    public RenderBasicTurret(String url) {
+        model = new ModelBasicTurret();
 
         resourceLoctation = Reference.MOD_ID + url;
     }
@@ -53,7 +53,7 @@ public class BasicTurretRender extends TileEntitySpecialRenderer{
         Minecraft.getMinecraft().renderEngine.bindTexture(textures);
 
         //Handles Rotation
-        Turret entity = (Turret) te;
+        TileEntityTurret entity = (TileEntityTurret) te;
         double initialDirection = entity.initialDirection;
         GL11.glRotatef((int)initialDirection, 0.0F, 1.0F, 0.0F);
         model.rotateTop(entity.rotateX, entity.rotateY, entity.rotateZ);

@@ -1,8 +1,9 @@
 package com.nate.turrets.init;
 
-import com.nate.turrets.blocks.TurretBlock;
+import com.nate.turrets.blocks.BlockTurret;
 import com.nate.turrets.gui.GuiHandler;
-import com.nate.turrets.tileentities.Turret;
+import com.nate.turrets.items.ItemBullet;
+import com.nate.turrets.tileentities.TileEntityTurret;
 import com.nate.turrets.turrets;
 import cpw.mods.fml.common.network.NetworkRegistry;
 import cpw.mods.fml.common.registry.GameRegistry;
@@ -22,13 +23,17 @@ public class ModObjects {
         }
     };
 
-    public static TurretBlock turretBlock = new TurretBlock("Basic Turret");
+    public static BlockTurret turretBlock = new BlockTurret("basicTurret");
+
+    public static ItemBullet bullet = new ItemBullet("bullet", 64);
 
     public static void init(){
 
-        GameRegistry.registerBlock(turretBlock, "Basic Turret");
+        GameRegistry.registerBlock(turretBlock, "basicTurret");
 
-        GameRegistry.registerTileEntity(Turret.class, "Turret");
+        GameRegistry.registerTileEntity(TileEntityTurret.class, "Turret");
+
+        GameRegistry.registerItem(bullet, "bullet");
 
         NetworkRegistry.INSTANCE.registerGuiHandler(turrets.instance, new GuiHandler() );
     }

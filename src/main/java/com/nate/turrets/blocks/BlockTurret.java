@@ -3,7 +3,7 @@ package com.nate.turrets.blocks;
 
 import com.nate.turrets.Reference;
 import com.nate.turrets.init.ModObjects;
-import com.nate.turrets.tileentities.Turret;
+import com.nate.turrets.tileentities.TileEntityTurret;
 import com.nate.turrets.turrets;
 import net.minecraft.block.BlockContainer;
 import net.minecraft.block.material.Material;
@@ -17,9 +17,9 @@ import net.minecraft.world.World;
 /**
  * Created by Nathanael on 7/13/2015.
  */
-public class TurretBlock extends BlockContainer{
+public class BlockTurret extends BlockContainer{
 
-    public TurretBlock(String name){
+    public BlockTurret(String name){
         super(Material.iron);
         super.setCreativeTab(ModObjects.turretTabs);
         setBlockName(Reference.MOD_ID + "_" + name);
@@ -39,7 +39,7 @@ public class TurretBlock extends BlockContainer{
 
     @Override
     public TileEntity createNewTileEntity(World world, int n) {
-        return new Turret();
+        return new TileEntityTurret();
     }
 
     @Override
@@ -64,7 +64,7 @@ public class TurretBlock extends BlockContainer{
         {
             return;
         }
-        Turret tile = (Turret) world.getTileEntity(x, y, z);
+        TileEntityTurret tile = (TileEntityTurret) world.getTileEntity(x, y, z);
         double direction = MathHelper.floor_double((double) (entity.rotationYaw * 4.0F / 360.0F) + 0.5D) & 3;
         if(direction * 90 + 180 == 270 || direction * 90 + 180 == 450){
             tile.initialDirection = direction * 90;

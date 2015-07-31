@@ -1,2 +1,3 @@
 itemGroup.Turrets=Turrets
-tile.turrets_
+tile.turrets_basicTurret.name=Basic Turret
+item.turrets_bullet.name=bullet

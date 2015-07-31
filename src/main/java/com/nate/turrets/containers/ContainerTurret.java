@@ -1,6 +1,6 @@
 package com.nate.turrets.containers;
 
-import com.nate.turrets.tileentities.Turret;
+import com.nate.turrets.tileentities.TileEntityTurret;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.InventoryPlayer;
 import net.minecraft.inventory.Container;
@@ -10,11 +10,11 @@ import net.minecraft.item.ItemStack;
 /**
  * Created by Nathanael on 7/14/2015.
  */
-public class TurretContainer extends Container {
+public class ContainerTurret extends Container {
 
-    private Turret tileEntity;
+    private TileEntityTurret tileEntity;
 
-    public TurretContainer(InventoryPlayer playerInventory, Turret turret){
+    public ContainerTurret(InventoryPlayer playerInventory, TileEntityTurret turret){
         //adds turret inventory to gui
         tileEntity= turret;
         addSlotToContainer(new Slot(tileEntity, 0, 80, 35));

@@ -1,8 +1,8 @@
 package com.nate.turrets.gui;
 
 import com.nate.turrets.Reference;
-import com.nate.turrets.containers.TurretContainer;
-import com.nate.turrets.tileentities.Turret;
+import com.nate.turrets.containers.ContainerTurret;
+import com.nate.turrets.tileentities.TileEntityTurret;
 import net.minecraft.client.gui.inventory.GuiContainer;
 import net.minecraft.entity.player.InventoryPlayer;
 import net.minecraft.util.ResourceLocation;
@@ -14,8 +14,8 @@ import org.lwjgl.opengl.GL11;
  */
 public class GuiTurret extends GuiContainer{
 
-    public GuiTurret (InventoryPlayer inventoryPlayer, Turret tileEntity) {
-        super(new TurretContainer(inventoryPlayer, tileEntity));
+    public GuiTurret (InventoryPlayer inventoryPlayer, TileEntityTurret tileEntity) {
+        super(new ContainerTurret(inventoryPlayer, tileEntity));
     }
 
 

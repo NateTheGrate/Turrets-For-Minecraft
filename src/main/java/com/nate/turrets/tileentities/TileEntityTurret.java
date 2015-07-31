@@ -15,7 +15,7 @@ import java.util.ArrayList;
 /**
  * Created by Nathanael on 7/6/2015.
  */
-public class Turret extends TileEntity implements ITurret, IInventory{
+public class TileEntityTurret extends TileEntity implements ITurret, IInventory{
 
     public ItemStack[] inventory;
 
@@ -25,7 +25,7 @@ public class Turret extends TileEntity implements ITurret, IInventory{
     public float rotateZ;
     private int tick;
 
-    public Turret(){
+    public TileEntityTurret(){
         inventory = new ItemStack[1];
         tick = 0;
     }
@@ -41,7 +41,10 @@ public class Turret extends TileEntity implements ITurret, IInventory{
         for(EntityMob mob : mobs){
             if (mob.equals(closestMob(mobs))) {
                 float angleY = (float)Math.toDegrees(Math.atan2(xCoord - mob.posX, this.zCoord - mob.posZ) );
-                rotateY = -angleY / 90;
+                rotateY = (float)mob.posX;
+                rotateX = (float)mob.posY;
+                //rotateZ = (float)mob.posZ;
+                //initialDirection = angleY;
 
             }
         }

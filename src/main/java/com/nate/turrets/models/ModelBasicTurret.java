@@ -15,7 +15,7 @@ import net.minecraft.client.model.ModelBase;
 import net.minecraft.client.model.ModelRenderer;
 import net.minecraft.entity.Entity;
 
-public class BasicTurretModel extends ModelBase
+public class ModelBasicTurret extends ModelBase
 {
     //fields
     ModelRenderer stand;
@@ -25,7 +25,7 @@ public class BasicTurretModel extends ModelBase
     ModelRenderer nozzelPiece;
     ModelRenderer ammoBox;
 
-    public BasicTurretModel()
+    public ModelBasicTurret()
     {
         textureWidth = 64;
         textureHeight = 32;
